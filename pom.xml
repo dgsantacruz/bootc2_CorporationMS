@@ -12,7 +12,7 @@
 	<artifactId>corporate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>corporate</name>
-	<description>Corporate Microservice</description>
+	<description>Corporate client Microservice</description>
 
 	<properties>
 		<java.version>1.8</java.version>

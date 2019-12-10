@@ -9,10 +9,9 @@ import lombok.Data;
 
 //This lombok annotation it's a shortcut to @string, @EqualsandHashCode, @Getter and @Setter and @RequiredArgsConstructor
 @Data
-
 //This spring data annotation allows to override default collection naming to one I choose.
 @Document(collection = "corpClients")
-public class corpClient
+public class CorpClient
 {
     @Id
     private String id;

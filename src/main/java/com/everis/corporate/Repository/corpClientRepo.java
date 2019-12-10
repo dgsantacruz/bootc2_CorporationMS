@@ -1,12 +1,12 @@
 package com.everis.corporate.Repository;
 
-import com.everis.corporate.Model.corpClient;
+import com.everis.corporate.Model.CorpClient;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
 import reactor.core.publisher.Mono;
 
-public interface corpClientRepo extends ReactiveMongoRepository<corpClient, String>
+public interface CorpClientRepo extends ReactiveMongoRepository<CorpClient, String>
 {
-    public Mono<corpClient> findByRUC(String ruc);
+    public Mono<CorpClient> findByRUC(String ruc);
 }

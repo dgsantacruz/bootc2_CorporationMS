@@ -1,35 +1,15 @@
 package com.everis.corporate.Service;
 
-import com.everis.corporate.Model.corpClient;
-import com.everis.corporate.Repository.corpClientRepo;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.everis.corporate.Model.CorpClient;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Service
-public class corpClientService implements corpClientInterface {
+public interface CorpClientService
+{
+    public Flux<CorpClient> findAll();
 
-    @Autowired
-    private corpClientRepo repo;
+    public Mono<CorpClient> findByRUC(String ruc);
 
-    @Override
-    public Flux<corpClient> findAll() 
-    {
-        return repo.findAll();
-    }
-
-    @Override
-    public Mono<corpClient> findByRUC(String ruc) 
-    {
-        return repo.findByRUC(ruc);
-    }
-
-    @Override
-    public Mono<corpClient> addCorpClient(corpClient client)
-    {
-        return repo.save(client);
-    }
+    public Mono<CorpClient> addCorpClient(CorpClient client);
 }
