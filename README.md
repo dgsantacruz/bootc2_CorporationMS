@@ -1,2 +1,2 @@
-# bootc2_CorporationMS
-Microservice for Corporate Persona client
+# bootc2_BusinessClientMS
+Microservice for Business type clients
