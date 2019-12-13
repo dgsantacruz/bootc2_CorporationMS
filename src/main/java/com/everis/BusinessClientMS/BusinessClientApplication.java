@@ -1,4 +1,4 @@
-package com.everis.corporate;
+package com.everis.BusinessClientMS;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class CorporateApplication {
+public class BusinessClientApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CorporateApplication.class, args);
+		SpringApplication.run(BusinessClientApplication.class, args);
 	}
 
 }

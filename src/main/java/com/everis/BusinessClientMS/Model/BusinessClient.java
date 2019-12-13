@@ -1,4 +1,4 @@
-package com.everis.corporate.Model;
+package com.everis.BusinessClientMS.Model;
 
 import javax.validation.constraints.NotBlank;
 
@@ -10,8 +10,8 @@ import lombok.Data;
 //This lombok annotation it's a shortcut to @string, @EqualsandHashCode, @Getter and @Setter and @RequiredArgsConstructor
 @Data
 //This spring data annotation allows to override default collection naming to one I choose.
-@Document(collection = "corpClients")
-public class CorpClient
+@Document(collection = "BusinessClients")
+public class BusinessClient
 {
     @Id
     private String id;
