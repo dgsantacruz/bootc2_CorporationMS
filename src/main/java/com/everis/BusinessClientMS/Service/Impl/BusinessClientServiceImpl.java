@@ -16,15 +16,24 @@ public class BusinessClientServiceImpl implements BusinessClientService {
     @Autowired
     private BusinessClientRepo repo;
 
-    @Override
-    public Flux<BusinessClient> findAllClients() 
-    {
-        return repo.findAll();
-    }
-
+    //Create Client
     @Override
     public Mono<BusinessClient> addClient(BusinessClient client)
     {
         return repo.save(client);
+    }
+
+    //Delete Client
+    @Override
+    public Mono<Void> delClient(BusinessClient client)
+    {
+        return repo.delete(client);
+    }
+
+    //Get All Clients
+    @Override
+    public Flux<BusinessClient> findAllClients() 
+    {
+        return repo.findAll();
     }
 }

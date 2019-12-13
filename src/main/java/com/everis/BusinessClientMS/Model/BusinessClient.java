@@ -20,7 +20,7 @@ public class BusinessClient
     private String ruc;
 
     @NotBlank
-    private String corpname;
+    private String businessName;
 
     @NotBlank
     private String phone;

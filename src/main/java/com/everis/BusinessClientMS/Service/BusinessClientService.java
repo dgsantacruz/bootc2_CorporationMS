@@ -7,7 +7,12 @@ import reactor.core.publisher.Mono;
 
 public interface BusinessClientService
 {
-    public Flux<BusinessClient> findAllClients();
-
+    //Create Client
     public Mono<BusinessClient> addClient(BusinessClient client);
+    
+    //Delete Client
+    public Mono<Void> delClient(BusinessClient client);
+
+    //Get All Client
+    public Flux<BusinessClient> findAllClients();    
 }
