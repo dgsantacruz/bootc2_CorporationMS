@@ -5,6 +5,7 @@ import com.everis.BusinessClientMS.Service.Impl.BusinessClientServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import reactor.core.publisher.Flux;
@@ -15,6 +16,13 @@ public class BusinessClientController
 {
     @Autowired
     private BusinessClientServiceImpl service;
+
+    //Save client on db
+    @PostMapping("/clients/create")
+    public Mono<BusinessClient> addClient(BusinessClient client)
+    {
+        return service.addClient(client);
+    }
     
     //Get All Clients
     @GetMapping("/clients/all")
@@ -23,9 +31,5 @@ public class BusinessClientController
         return service.findAllClients();
     }
 
-    //Save client on db
-    public Mono<BusinessClient> addClient(BusinessClient client)
-    {
-        return service.addClient(client);
-    }
+
 }
