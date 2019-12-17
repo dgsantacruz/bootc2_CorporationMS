@@ -16,6 +16,31 @@ public class BusinessClientServiceImpl implements BusinessClientService {
     @Autowired
     private BusinessClientRepo repo;
 
+    //Get All Clients
+    @Override
+    public Flux<BusinessClient> findAllClients() 
+    {
+        return repo.findAll();
+    }
+
+    //Get client by BusinessName
+    @Override
+    public Mono<BusinessClient> findClientByBusinessName(String name) {
+        return repo.findByBusinessName(name);
+    }
+
+    //Get client by Ruc
+    @Override
+    public Mono<BusinessClient> findClientByRuc(String ruc) {
+        return repo.findByRuc(ruc);
+    }
+
+    //Get client by Phone
+    @Override
+    public Mono<BusinessClient> findClientByPhone(String phone) {
+        return repo.findByPhone(phone);
+    }
+
     //Create Client
     @Override
     public Mono<BusinessClient> addClient(BusinessClient client)
@@ -28,12 +53,5 @@ public class BusinessClientServiceImpl implements BusinessClientService {
     public Mono<Void> delClient(BusinessClient client)
     {
         return repo.delete(client);
-    }
-
-    //Get All Clients
-    @Override
-    public Flux<BusinessClient> findAllClients() 
-    {
-        return repo.findAll();
     }
 }

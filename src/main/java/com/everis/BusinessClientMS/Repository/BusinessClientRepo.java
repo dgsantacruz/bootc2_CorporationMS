@@ -4,9 +4,14 @@ import com.everis.BusinessClientMS.Model.BusinessClient;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 public interface BusinessClientRepo extends ReactiveMongoRepository<BusinessClient, String>
 {
-    Flux<BusinessClient> findByName(String name);
+    //Name must match attributes in model file. (ie -> name throws error, must match "businessName")
+    Mono<BusinessClient> findByBusinessName(String name);
+
+    Mono<BusinessClient> findByRuc(String ruc);
+
+    Mono<BusinessClient> findByPhone(String phone);
 }
