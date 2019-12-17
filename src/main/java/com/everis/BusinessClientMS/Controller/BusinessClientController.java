@@ -30,44 +30,44 @@ public class BusinessClientController
     }
 
     //Get client by RUC
-    @GetMapping("/{}")
+    @GetMapping("/ruc/{ruc}")
     public Flux<BusinessClient> getClientByRuc()
     {
         return service.findAllClients();
     }
 
-    // //Get client by Name
-    // @GetMapping("/{}")
-    // public Flux<BusinessClient> getClientByName()
-    // {
-    //     return service.findAllClients();
-    // }
+    //Get client by Name
+    @GetMapping("/name/{name}")
+    public Flux<BusinessClient> getClientByName()
+    {
+        return service.findAllClients();
+    }
 
-    // //Get client by Phone
-    // @GetMapping("/all")
-    // public Flux<BusinessClient> getClientByPhone()
-    // {
-    //     return service.findAllClients();
-    // }
+    //Get client by Phone
+    @GetMapping("/phone/{phone}")
+    public Flux<BusinessClient> getClientByPhone()
+    {
+        return service.findAllClients();
+    }
 
-    // //Save client on db
-    // @PostMapping
-    // public Mono<BusinessClient> addClient(@RequestBody BusinessClient client)
-    // {        
-    //     return service.addClient(client);
-    // }
+    //Save client on db
+    @PostMapping
+    public Mono<BusinessClient> addClient(@RequestBody BusinessClient client)
+    {        
+        return service.addClient(client);
+    }
 
-    // //Update client data on db
-    // @PutMapping
-    // public Mono<BusinessClient> updateClient(@RequestBody BusinessClient client)
-    // {        
-    //     return null;
-    // }
+    //Update client data on db
+    @PutMapping
+    public Mono<BusinessClient> updateClient(@RequestBody BusinessClient client)
+    {        
+        return null;
+    }
 
-    // //Delete client data on db
-    // @DeleteMapping
-    // public Mono<BusinessClient> deleteClient(@RequestBody BusinessClient client)
-    // {        
-    //     return null;
-    // }
+    //Delete client data on db
+    @DeleteMapping
+    public Mono<BusinessClient> deleteClient(@RequestBody BusinessClient client)
+    {        
+        return null;
+    }
 }
